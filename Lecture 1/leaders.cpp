@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> findReverseLeaders(const std::vector<int>& vect){
+std::vector<int> findReverseLeaders(const std::vector<int> &vect){
     int max = -1;
     std::vector<int> v;
     v.reserve(vect.size());
@@ -32,7 +32,7 @@ int main() {
         for (std::vector<int>::reverse_iterator it = v2.rbegin(); it < v2.rend(); ++it ){
             std::cout << *it << " ";
         }
-        std::cout <<  "\n";
+        std::cout <<  std::endl;
 
         v1.clear();
 

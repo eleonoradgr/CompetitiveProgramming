@@ -32,6 +32,6 @@ int main(){
             v.push_back(aux);
         }
         int res = kadane( v );
-        std::cout << res << "\n";
+        std::cout << res << std::endl;
     }
 }
