@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> findReverseLeaders(const std::vector<int> &vect){
+std::vector<int> findReverseLeaders(std::vector<int> const &vect) {
     int max = -1;
     std::vector<int> v;
     v.reserve(vect.size());
-    for (std::vector<int>::const_reverse_iterator it = vect.rbegin(); it < vect.rend(); ++it){
-        if(*it >= max){
+    for (std::vector<int>::const_reverse_iterator it = vect.rbegin(); it < vect.rend(); ++it) {
+        if (*it >= max) {
             max = *it;
             v.push_back(*it);
         }
@@ -17,22 +17,22 @@ std::vector<int> findReverseLeaders(const std::vector<int> &vect){
 int main() {
     int t;
     std::cin >> t;
-    for(int i = 0; i < t; i++){
+    for (int i = 0; i < t; i++) {
         int n;
         std::cin >> n;
         std::vector<int> v1;
         v1.reserve(n);
-        for( int j = 0; j < n; j++){
+        for (int j = 0; j < n; j++) {
             int aux;
             std::cin >> aux;
             v1.push_back(aux);
         }
-        std::vector<int> v2 = findReverseLeaders( v1 );
+        std::vector<int> v2 = findReverseLeaders(v1);
 
-        for (std::vector<int>::reverse_iterator it = v2.rbegin(); it < v2.rend(); ++it ){
+        for (std::vector<int>::reverse_iterator it = v2.rbegin(); it < v2.rend(); ++it) {
             std::cout << *it << " ";
         }
-        std::cout <<  std::endl;
+        std::cout << std::endl;
 
         v1.clear();
 
