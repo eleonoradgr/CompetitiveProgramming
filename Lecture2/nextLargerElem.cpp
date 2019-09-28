@@ -3,15 +3,15 @@
 #include <deque>
 
 
-std::vector<int> nextLargerElement(std::vector<int> const& v){
-    std::vector<int> result(v.size());
-    std::deque< std::pair<int,int> > d;
+std::vector< long long> nextLargerElement(std::vector< long long> const& v){
+    std::vector< long long> result(v.size());
+    std::deque< std::pair< long long,int> > d;
     for( int i = 0; i < v.size(); i++){
         while (d.size() > 0 && v[i] > d.back().first) {
             result[d.back().second] = v[i];
             d.pop_back();
         }
-        std::pair <int, int> p(v[i],i);
+        std::pair <long long, int> p(v[i],i);
         d.push_back(p);
     }
     while (d.size() > 0){
@@ -26,15 +26,15 @@ int main(){
     std::cin >> t;
     for (int i = 0; i < t; ++i){
         std::cin >> n;
-        std::vector<int> v;
+        std::vector< long long> v;
         v.reserve(n);
         for (int j = 0; j < n; j++){
-            int aus;
+             long long aus;
             std::cin >> aus;
             v.push_back(aus);
         }
-        std::vector<int> res(nextLargerElement(v));
-        for (std::vector<int>::iterator iter = res.begin(); iter != res.end(); ++iter){
+        std::vector< long long> res(nextLargerElement(v));
+        for (std::vector< long long>::iterator iter = res.begin(); iter != res.end(); ++iter){
             std::cout << *iter << " ";
         }
         std::cout <<  std::endl;
