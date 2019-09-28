@@ -7,11 +7,11 @@ std::pair<int, int> towers(std::vector<int> const &v) {
     int nTowers = 0;
     std::vector<int> counter(1000);
     for (std::vector<int>::const_iterator iter = v.begin(); iter != v.end(); ++iter) {
-        if (counter[*iter] == 0) {
+        if (counter[(*iter)-1] == 0) {
             nTowers++;
         }
-        counter[*iter]++;
-        if (counter[*iter] > maxHeight) {
+        counter[(*iter)-1]++;
+        if (counter[(*iter)-1] > maxHeight) {
             maxHeight++;
         }
     }
