@@ -19,7 +19,6 @@ std::vector<uint16_t> findTeam(int n, std::vector<team> &vector) {
     std::vector<uint16_t> couples(2*n);
     sort (vector.begin(), vector.end(), compareTeam);
     for(std::vector<team>::const_reverse_iterator it = vector.rbegin(); it != vector.rend(); ++it){
-        std::cout << it->strenght;
         if(couples[ (it->i)-1 ] == 0 && couples[(it->j)-1] == 0){
             couples[(it->i)-1] = it->j;
             couples[(it->j)-1] = it->i;
