@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/CompetitiveProgramming.dir/Lecture2/findTeamMemebers.cpp.o  -o CompetitiveProgramming 
