@@ -3,15 +3,13 @@
 
 
 std::pair<int, int> divideChocolate(std::vector<int> &v, int sum) {
-    int i = 0;
-    while (v[i] <= sum) {
+    int i = 1;
+    sum -= v[0];
+    while(i < v.size() && v[i]+v[i-1] <= sum){
         sum -= v[i];
+        v[i] += v[i-1];
         i++;
-        if (i< v.size())
-            v[i] += v[i-1];
-        else break;
     }
-    if (i > 0 && i < v.size()-1 && v[i - 1] > sum + v[i]) i--;
 
     return std::make_pair(i,(v.size()-i));
 }
