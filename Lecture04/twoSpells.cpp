@@ -30,8 +30,8 @@ int main() {
                auto el = lightning.find(-d);
                lightning.erase(el);
             }else{
-                auto el = fire.find(d);
-                fire.erase(d);
+                auto el = fire.find(-d);
+                fire.erase(el);
             }
         }
         int damage = 0;
@@ -75,7 +75,7 @@ int main() {
                 }
             }
         }
-        std::cout << damage;
+        std::cout << damage << std::endl;
     }
 
 }
