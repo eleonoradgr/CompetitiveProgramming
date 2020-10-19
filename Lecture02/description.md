@@ -14,6 +14,6 @@ and the different towers. (If the length is not limited a solution could be orde
 **Space complexity:** &Omicron;(n).
 ## Find team members
 **Problem:**[Find team members](http://codeforces.com/problemset/problem/579/B?locale=en) \
-**Solution:** Given $2n$ people,order the possible couples according to the strength of pair and than start to create pairs according to max strength. \
+**Solution:** Given 2n people,order the possible couples according to the strength of pair and than start to create pairs according to max strength. \
 **Time complexity:** &Omicron;( n<sup>2</sup>2logn).\
 **Time complexity:** &theta;(n<sup>2</sup>).
