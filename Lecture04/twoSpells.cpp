@@ -34,46 +34,36 @@ int main() {
                 fire.erase(el);
             }
         }
-        int damage = 0;
+        unsigned long int damage = 0;
         auto l = lightning.crbegin();
         auto f = fire.crbegin();
-        bool doubling = false;
-        for (int j = 0; j<size; ++j){
-            if(l != lightning.crend() && f != fire.crend()){
-                if (doubling){
-                    if (*l > *f){
-                        doubling = true;
+        int doubling = (fire.size() == 0 )? lightning.size() - 1 : lightning.size();
+        for (int j = 0; j < doubling ; ++j){
+            if( l != lightning.crend() && f != fire.crend()){
+                    if (*l >= *f && lightning.size()> 1 ){
                         damage += 2*(*l);
                         ++l;
                     }else{
-                        doubling = false;
                         damage += 2*(*f);
                         ++f;
                     }
-                }else{
-                    doubling = true;
-                    damage += (*l);
-                    ++l;
-                }
             }else{
-                if(l != lightning.crend()){
-                    if(doubling){
-                        damage += 2*(*l);
-                    }else{
-                        damage += (*l);
-                    }
-                    doubling = true;
-                    ++l;
-                }else{
-                    if(doubling){
-                        damage += 2*(*f);
-                    }else{
-                        damage += (*f);
-                    }
-                    doubling = false;
+                if(f != fire.crend()){
+                    damage += 2*(*f);
                     ++f;
+                }else{
+                    damage += 2*(*l);
+                    ++l;
                 }
             }
+        }
+        while (l != lightning.crend()){
+            damage += *l;
+            ++l;
+        }
+        while (f != fire.crend()){
+            damage += *f;
+            ++f;
         }
         std::cout << damage << std::endl;
     }
