@@ -19,7 +19,7 @@ std::vector<std::pair<int,int>> kGoodSegment(std::vector<int> &a, int k) {
             um.insert(std::make_pair(a[j],1));
             if(um.size() <= k){
                 // still k good
-                local_len++;
+                local_len = j - i;
                 if(local_len == max_len){
                     //same length of the best
                     result.push_back(std::make_pair(i,j));
@@ -32,29 +32,25 @@ std::vector<std::pair<int,int>> kGoodSegment(std::vector<int> &a, int k) {
                     }
                 }
             }else{
+
                 //more than k different elements
-                auto k_del = um.find(a[i]);
-                while(k_del->second > 0){
-                    if(a[i] == k_del->first){
-                        k_del->second--;
-                    }else{
-                        auto k_del2 = um.find(a[i]);
-                        k_del2->second -= 1;
-                        if(k_del2->second == 0){
-                            um.erase(k_del2);
-                            ++i;
-                            break;
-                        }
+                int deleted = 0;
+                while(deleted == 0){
+                    auto k_del = um.find(a[i]);
+                    k_del->second--;
+                    if(k_del->second == 0){
+                        um.erase(k_del);
+                        deleted = 1;
                     }
                     ++i;
                 }
                 local_len = j-i;
-                um.erase(k_del);
+
             }
         }else{
             //already seen element
             found->second += 1;
-            local_len++;
+            local_len = j - i;
             if(local_len == max_len){
                 //same length of the best
                 result.push_back(std::make_pair(i,j));
@@ -84,9 +80,12 @@ int main(){
         a.push_back(aus);
     }
     std::vector<std::pair<int,int>> result = kGoodSegment(a,k);
-    for(auto i = 0; i< result.size(); ++i){
+    printf("%d ", result[0].first+1);
+    printf("%d ", result[0].second+1);
+    printf("\n");
+    /*for(auto i = 0; i< result.size(); ++i){
         printf("%d ", result[i].first+1);
         printf("%d ", result[i].second+1);
         printf("\n");
-    }
+    }*/
 }
