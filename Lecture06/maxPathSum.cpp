@@ -43,7 +43,3 @@ int maxPathSum(Node *root) {
     std::pair<int, int> result = maxPathSumRec(root);
     return result.first;
 }
-
-int main() {
-    return 0;
-}
