@@ -9,14 +9,13 @@ int main() {
     std::ios_base::sync_with_stdio(false);
 
     int n;
-    std::multiset<int> lightning;
-    std::multiset<int> fire;
+    std::set<long long> lightning;
+    std::set<long long> fire;
     std::cin >> n;
     int size = 0;
     for (int i = 0; i < n; ++i) {
         int tp,d;
-        std::cin >> tp;
-        std::cin >> d;
+        std::cin >> tp >> d;
         if (d > 0){
             size++;
             if(tp){
@@ -34,15 +33,20 @@ int main() {
                 fire.erase(el);
             }
         }
-        unsigned long int damage = 0;
+        long long  damage = 0;
         auto l = lightning.crbegin();
         auto f = fire.crbegin();
-        int doubling = (fire.size() == 0 )? lightning.size() - 1 : lightning.size();
-        for (int j = 0; j < doubling ; ++j){
+        long doubling = lightning.size();
+        int l_used = 0;
+        for (int j = 0; j < lightning.size() ; ++j){
             if( l != lightning.crend() && f != fire.crend()){
-                    if (*l >= *f && lightning.size()> 1 ){
+                    if (*l > *f && l_used < lightning.size()-1 ){
                         damage += 2*(*l);
                         ++l;
+                        ++l_used;
+                        /*if(l_used == lightning.size()-1){
+                            doubling--;
+                        }*/
                     }else{
                         damage += 2*(*f);
                         ++f;
@@ -52,10 +56,17 @@ int main() {
                     damage += 2*(*f);
                     ++f;
                 }else{
-                    damage += 2*(*l);
-                    ++l;
+                    if(l_used < lightning.size()-1){
+                        damage += 2*(*l);
+                        ++l;
+                        ++l_used;
+                        /*if(l_used == lightning.size()-1){
+                            doubling--;
+                        }*/
+                    }
                 }
             }
+
         }
         while (l != lightning.crend()){
             damage += *l;
