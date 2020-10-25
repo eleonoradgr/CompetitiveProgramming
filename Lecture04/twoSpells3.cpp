@@ -21,17 +21,18 @@ int main() {
     // doubling.size numero di elementi effettivamnte raddoppiati
     int doubled = 0;// numero di elementi che possono essere raddoppiati
     int l_doubled = 0;// numero di elementi lightrning raddoppiati
-    long long damage_base = 0;
     long long damage = 0;
     for (int i = 0; i < n; ++i) {
-        int tp = input[i].second;
         int d = input[i].first;
+        int tp = input[i].second;
         std::pair<int, int> elem = input[i];
 
         if (d > 0) {
             if (tp) doubled++;
             damage += d;
-            if (!doubling.empty() && d > doubling.begin()->first && (tp == 0 || l_doubled < doubled - 1)) {
+            //il problema è il caso in cui ho uno spell l quando ho un fire nei doubling e un altro light più grandre negli spells
+            // ho aggiunto la condizionr  d > spells.rbegin()->first
+            if (!doubling.empty() && d > doubling.begin()->first && (tp == 0 || (l_doubled < doubled - 1 && d > spells.rbegin()->first))) {
                 damage += d;
                 doubling.insert(elem);
                 if (tp) l_doubled++;
@@ -66,10 +67,27 @@ int main() {
                 spells.erase(-d);
                 if (tp) {
                     doubled--;
-                    spells.insert(*doubling.begin());
-                    damage -= doubling.begin()->first;
-                    if (doubling.begin()->second) l_doubled--;
-                    doubling.erase(spells.begin()->first);
+                    if(!doubling.empty()){
+                        if(l_doubled > 0 && l_doubled > doubled-1){
+                            auto it = doubling.begin();
+                            while (it != doubling.end()) {
+                                if(it->second){
+                                    spells.insert(*it);
+                                    damage -= it->first;
+                                    l_doubled--;
+                                    doubling.erase(it->first);
+                                    break;
+                                }
+                                ++it;
+                            }
+                        }else{
+                            spells.insert(*doubling.begin());
+                            damage -= doubling.begin()->first;
+                            if (doubling.begin()->second) l_doubled--;
+                            //qui prima spells.begin()->first
+                            doubling.erase(doubling.begin()->first);
+                        }
+                    }
                 }
             } else {
                 damage += 2 * d;
@@ -93,6 +111,7 @@ int main() {
                             break;
                         }
                         ++it;
+
                     }
                 }
             }
