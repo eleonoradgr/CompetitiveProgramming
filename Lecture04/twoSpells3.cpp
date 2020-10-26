@@ -1,6 +1,5 @@
 #include <iostream>
 #include <map>
-#include <climits>
 #include <vector>
 
 int main() {
@@ -84,7 +83,6 @@ int main() {
                             spells.insert(*doubling.begin());
                             damage -= doubling.begin()->first;
                             if (doubling.begin()->second) l_doubled--;
-                            //qui prima spells.begin()->first
                             doubling.erase(doubling.begin()->first);
                         }
                     }

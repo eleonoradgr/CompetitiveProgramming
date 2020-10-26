@@ -1,5 +1,6 @@
 //
 // Created by eleonora on 30/09/20.
+// simple implementation, O(n^2)
 //
 #include <iostream>
 #include <set>
@@ -36,7 +37,6 @@ int main() {
         long long  damage = 0;
         auto l = lightning.crbegin();
         auto f = fire.crbegin();
-        long doubling = lightning.size();
         int l_used = 0;
         for (int j = 0; j < lightning.size() ; ++j){
             if( l != lightning.crend() && f != fire.crend()){
@@ -44,9 +44,6 @@ int main() {
                         damage += 2*(*l);
                         ++l;
                         ++l_used;
-                        /*if(l_used == lightning.size()-1){
-                            doubling--;
-                        }*/
                     }else{
                         damage += 2*(*f);
                         ++f;
@@ -60,9 +57,6 @@ int main() {
                         damage += 2*(*l);
                         ++l;
                         ++l_used;
-                        /*if(l_used == lightning.size()-1){
-                            doubling--;
-                        }*/
                     }
                 }
             }
