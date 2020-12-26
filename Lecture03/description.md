@@ -1,7 +1,7 @@
 ## Inversion Count
 **Problem:**[Inversion Count](https://www.spoj.com/problems/INVCNT/) \
 **Solution:** Order the array through merge sort, in merge process, considering i the index of left sub-array, if the element in right sub-array is smaller than the element in the left sub-array,
- then there are (mid – i) inversions. This is because left and right sub-arrays are sorted, so all the remaining elements in left-subarray have to be counted as inversions. \
+ then there are (sizeof(left sub-array) – i) inversions. This is because left and right sub-arrays are sorted, so all the remaining elements in left-subarray have to be counted as inversions. \
 **Time complexity:** &theta;(n logn). \
 **Space complexity:** &theta;(n).
 ## Largest Even Number
