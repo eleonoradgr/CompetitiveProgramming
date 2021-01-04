@@ -1,16 +1,12 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> buildSuffixSum(std::string str){
+std::vector<int> buildPrefixSum(std::string str){
     std::vector<int> v;
     v.reserve( str.size() );
     v[0] = 0;
     for (int i = 1; i<str.size(); i++){
-        if (str[i] == str[i-1]){
-            v[i] = v[i-1]+1;
-        }else{
-            v[i]=v[i-1];
-        }
+        v[i] = (str[i] == str[i-1])? v[i-1]+1 : v[i-1];
     }
     return v;
 }
@@ -22,7 +18,7 @@ int main(){
     std::string str;
     std::cin >> str;
 
-    std::vector<int> v = buildSuffixSum(str);
+    std::vector<int> v = buildPrefixSum(str);
 
     std::cin >> n;
     for (int i = 0; i<n; i++){
