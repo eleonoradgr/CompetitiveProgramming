@@ -5,7 +5,7 @@ the max path found in the subtree and the max value to reach a leaf from the par
 the path that passes through itself and eventually update the maximum sum.
 The maxsum computed in the root node is the solution.\
 **Time complexity:** &theta;(n). \
-**Space complexity:** &theta;(n). \
+**Space complexity:** &theta;(n).
 
 ##  Longest k-Good Segment
 **Problem:**[ Longest k-Good Segment](https://codeforces.com/contest/616/problem/D?locale=en) \
@@ -17,6 +17,6 @@ The maxsum computed in the root node is the solution.\
   Since we know the occurrences of the element to delete, the algorithm remains linear, indeed once the elements are visited 
   they are eliminated from the segment and not visited anymore.
 * If the value has already at least one occurrence in the segment we increase its value in the hashtable and the length of the current segment.\
-During all these operations the indexes of the segments with max length are kept.
+During all these operations the indexes of the segments with max length are kept.\
 **Time complexity:** &theta;(n), since operations performed on the hashtable are constant on average. \
 **Space complexity:** &theta;(n).
