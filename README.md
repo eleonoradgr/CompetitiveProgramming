@@ -1,1 +1,6 @@
 # CompetitiveProgramming
+| Lecture        | Solution descriptions      | Solution  implementations |
+| :-------------: |:-------------:| :-----|
+| 14/09/2020    | [Lecture01](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture01) | [Leaders in array](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture01/leaders.cpp) <br /> [kadane's algorithm](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture01/kadane.cpp) <br /> [Missing number in array](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture01/missingNumber.cpp) <br /> [Trapping rain water](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture01/trappingWater.cpp) <br /> [Sliding window maximum](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture01/slidingWinMax.cpp)|
+| 16/09/2020    | [Lecture02](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture02) |   $12 |
+| zebra stripes | are neat      |    $1 |

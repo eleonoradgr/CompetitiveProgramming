@@ -1,16 +1,18 @@
-#include <iostream>
-#include <vector>
-#include <limits>
+#include<bits/stdc++.h>
+using namespace std;
 
-int kadane(std::vector<int> const &vect) {
+// Function to find subarray with maximum sum
+// arr: input array
+// n: size of array
+int maxSubarraySum(int arr[], int n){
     int max = std::numeric_limits<int>::min();
     int sum = 0;
-    for (std::vector<int>::const_iterator it = vect.begin(); it != vect.end(); ++it) {
+    for (int i = 0; i<n; ++i) {
 
         if (sum >= 0)
-            sum += *it;
+            sum += arr[i];
         else
-            sum = *it;
+            sum = arr[i];
 
         if (sum > max)
             max = sum;
@@ -18,20 +20,21 @@ int kadane(std::vector<int> const &vect) {
     return max;
 }
 
-int main() {
-    int t;
-    std::cin >> t;
-    for (int i = 0; i < t; ++i) {
-        int n;
-        std::cin >> n;
-        std::vector<int> v;
-        v.reserve(n);
-        for (int j = 0; j < n; ++j) {
-            int aux;
-            std::cin >> aux;
-            v.push_back(aux);
-        }
-        int res = kadane(v);
-        std::cout << res << std::endl;
+int main()
+{
+    int t,n;
+
+    cin>>t; //input testcases
+    while(t--) //while testcases exist
+    {
+
+        cin>>n; //input size of array
+
+        int a[n];
+
+        for(int i=0;i<n;i++)
+            cin>>a[i]; //inputting elements of array
+
+        cout << maxSubarraySum(a, n) << endl;
     }
 }

@@ -1,42 +1,44 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
-std::vector<int> findReverseLeaders(std::vector<int> const &vect) {
+using namespace std;
+
+vector<int> leaders(int a[], int n) {
+    std::vector<int> leaders;
+    leaders.reserve(n);
     int max = -1;
-    std::vector<int> v;
-    v.reserve(vect.size());
-    for (std::vector<int>::const_reverse_iterator it = vect.rbegin(); it < vect.rend(); ++it) {
-        if (*it >= max) {
-            max = *it;
-            v.push_back(*it);
+    for (int i = n - 1; i >= 0; --i) {
+        if (a[i] >= max) {
+            leaders.emplace_back(a[i]);
+            max = a[i];
         }
     }
-    return v;
+    reverse(leaders.begin(), leaders.end());
+    return leaders;
 }
 
 int main() {
-    int t;
-    std::cin >> t;
-    for (int i = 0; i < t; i++) {
-        int n;
-        std::cin >> n;
-        std::vector<int> v1;
-        v1.reserve(n);
-        for (int j = 0; j < n; j++) {
-            int aux;
-            std::cin >> aux;
-            v1.push_back(aux);
+    long long t;
+    cin >> t;//testcases
+    while (t--) {
+        long long n;
+        cin >> n;//total size of array
+
+        int a[n];
+
+        //inserting elements in the array
+        for (long long i = 0; i < n; i++) {
+            cin >> a[i];
         }
-        std::vector<int> v2 = findReverseLeaders(v1);
 
-        for (std::vector<int>::reverse_iterator it = v2.rbegin(); it < v2.rend(); ++it) {
-            std::cout << *it << " ";
+        //calling leaders() function
+        vector<int> v = leaders(a, n);
+
+        //printing elements of the vector
+        for (auto it = v.begin(); it != v.end(); it++) {
+            cout << *it << " ";
         }
-        std::cout << std::endl;
 
-        v1.clear();
-
+        cout << endl;
 
     }
-    return 0;
 }
