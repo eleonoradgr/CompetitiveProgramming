@@ -7,5 +7,5 @@
 | 28/09/2020    | [Lecture04](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture04) | [Two Types of Spells](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture04/twoTypesSpells.cpp) |
 | 30/09/2020    | [Lecture05](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture05) | [Frog and Mosquitoes](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture05/frogsMosquitoes.cpp)|
 | 05/10/2020    | [Lecture06](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture06) | [Maximum Path Sum](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture06/maxPathSum.cpp) <br /> [ Longest k-Good Segment](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture06/kGood.cpp)|
-||||
+| 12/10/2020    | [Lecture07](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture07) | [Ilya and Queries](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture07/ilyaQueries.cpp) <br /> [Number of Ways](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture07/numberOfWays.cpp) <br /> [Little Girl and Maximum Sum](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture07/littleGirl.cpp) <br/>|
 ||||
