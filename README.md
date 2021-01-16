@@ -5,6 +5,6 @@
 | 16/09/2020    | [Lecture02](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture02) | [Next larger element](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture02/nextLargerElem.cpp) <br /> [Towers](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture02/towers.cpp) <br /> [Find team members](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture02/findTeamMemebers.cpp)   |
 | 23/09/2020    | [Lecture03](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture03) | [Inversion Count](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture03/inversionCount.cpp) <br /> [Largest even number](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture03/largestEvenNumber.cpp) <br /> [The Monkey and the Oiled Bamboo](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture03/mokeyBamboo.cpp) |
 | 28/09/2020    | [Lecture04](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture04) | [Two Types of Spells](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture04/twoTypesSpells.cpp) |
-||||
+| 30/09/2020    | [Lecture05](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture05) | [Frog and Mosquitoes](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture05/frogsMosquitoes.cpp)|
 ||||
 ||||
