@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
 
+#define MAX_LEN 1000
 
 std::pair<int, int> towers(std::vector<int> const &v) {
     int maxHeight = 0;
     int nTowers = 0;
-    std::vector<int> counter(1000);
+    std::vector<int> counter(MAX_LEN);
     for (std::vector<int>::const_iterator iter = v.begin(); iter != v.end(); ++iter) {
         if (counter[(*iter) - 1] == 0) {
             nTowers++;
