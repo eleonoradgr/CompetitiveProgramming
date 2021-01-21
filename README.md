@@ -13,5 +13,6 @@
 | 26/10/2020    | [Lecture11](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture11) | [Nested Segments](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture11/nestedSegment2.cpp)|
 | 02/11/2020    | [Lecture12](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture12) | [Circular RMQ](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture12/crmq.cpp)|
 | 09/11/2020    | [Lecture14](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture14) | [Triplets](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture14/triplets.cpp) <br /> [Smaller values](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture14/smallerValues.cpp)|
+| 16/11/2020    | [Lecture16](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture16) | [Powerful array](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture16/powarray.cpp) <br/> [Tree and queries](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture16/treeandq.cpp)|
 ||||
 ||||
