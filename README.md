@@ -16,5 +16,5 @@
 | 16/11/2020    | [Lecture16](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture16) | [Powerful array](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture16/powarray.cpp) <br/> [Tree and queries](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture16/treeandq.cpp)|
 | 18/11/2020    | [Lecture17](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture17) | [Longest Common Subsequence](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture17/Lcs.cpp)|
 | 23/11/2020    | [Lecture18](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture18) | [Minimum number of jumps](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture18/minJumps.cpp)|
-||||
+| 30/11/2020    | [Lecture19](https://github.com/eleonoradgr/CompetitiveProgramming/tree/master/Lecture19) | [Subset Sum](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture19/subset.cpp) <br/> [Knapsack Problem](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture19/knapsack01.cpp)|
 ||||
