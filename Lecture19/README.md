@@ -1,1 +1,14 @@
-{"metadata":{"language_info":{"name":"python","version":"3.7.8","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"},"kernelspec":{"name":"python3","display_name":"Python 3","language":"python"}},"nbformat_minor":4,"nbformat":4,"cells":[{"cell_type":"markdown","source":"## Knapsack Problem\n**Problem:**[Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/) \\\n**File:**[Knapsack Problem](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture19/knapsack01.cpp) \\\n**Solution:**Given n the number of elements and c the maximum capacity, we build a matrix A of size (n+1)\\*(c+1). We initialize it with all zeros and then fill it as:\n$$\nA[i][j]= max\n\\begin{cases}\nk[i-1][j] &\\text{if we do not select the ith item} \\\\\nk[i-1][j-w_i] +v_i &\\text{if we select the ith item }.\n\\end{cases}\n$$\nThe result is at cell A\\[n\\]\\[c\\].\\\\\n**Time complexity:** &theta;(n\\*c).\\\\\n**Space complexity:** &theta;(n\\*c).\\\\","metadata":{}}]}
+## Knapsack Problem
+**Problem:**[Knapsack Problem](https://www.spoj.com/problems/KNAPSACK/) \
+**File:**[Knapsack Problem](https://github.com/eleonoradgr/CompetitiveProgramming/blob/master/Lecture19/knapsack01.cpp) \
+**Solution:**Given n the number of elements and c the maximum capacity, we build a matrix A of size (n+1)\*(c+1). We initialize it with all zeros and then fill it as:
+$$
+A[i][j]= max
+\begin{cases}
+k[i-1][j] &\text{if we do not select the ith item} \\
+k[i-1][j-w_i] +v_i &\text{if we select the ith item }.
+\end{cases}
+$$
+The result is at cell A\[n\]\[c\].\\
+**Time complexity:** &theta;(n\*c).\\
+**Space complexity:** &theta;(n\*c).\\
