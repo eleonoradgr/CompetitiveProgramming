@@ -4,12 +4,51 @@
 //
 // Created by eleonora on 08/12/20.
 //
-struct node{
-    int father;
-    int colored;
-    int is_leaf;
-    node(int f, int c, int il): father(f), colored(c), is_leaf(il){};
+struct node {
+    int res_is_part;
+    int res_is_not_part;
+    std::vector<int> children;
+
+    node() {
+        res_is_part = -1;
+        res_is_not_part = -1;
+    }
 };
+
+int vertex_cover_rec(std::vector<node> &tree, int i, int p, bool is_part) {
+    int res = (is_part) ? 1 : 0;
+    if (!is_part) {// the element is not part of cover set
+        if (tree[i].res_is_not_part == -1) {
+            for (int j : tree[i].children) {//all its children must be part of it
+                if (j != p) {//it is not his parent
+                    res += vertex_cover_rec(tree, j, i, true);
+                }
+            }
+            tree[i].res_is_not_part = res;
+        } else {
+            res = tree[i].res_is_not_part;
+        }
+
+    } else {
+        if (tree[i].res_is_part == -1) {
+            for (int j : tree[i].children) {//all its children must could be or not part of it
+                if (j != p) {//it is not his parent
+                    res += std::min(vertex_cover_rec(tree, j, i, true), vertex_cover_rec(tree, j, i, false));
+                }
+            }
+            tree[i].res_is_part = res;
+        } else {
+            res = tree[i].res_is_part;
+        }
+    }
+    return res;
+}
+
+int vertex_cover(std::vector<node> &tree) {
+    int res = std::min(vertex_cover_rec(tree, 0, -1, true), vertex_cover_rec(tree, 0, -1, false));
+    return res;
+}
+
 
 int main() {
     int n;
@@ -18,34 +57,15 @@ int main() {
         std::cout << 1 << std::endl;
         return 0;
     }
-    std::vector <node> tree;
-    tree.reserve(n);
-    for (int i = 0; i < n; i++) {
-        tree.emplace_back(-1, 0, 1);
-    }
-    for (int i = 0; i < n - 1; i++) {
-        int father;
-        int child;
-        std::cin >> father;
-        std::cin >> child;
-        if (child < father) std::swap(father, child);
-        tree[child - 1].father = father - 1;
-        tree[father - 1].is_leaf = 0;
-    }
-    for ( int i = n; i > 0; i--){
-        if(tree[i].is_leaf && tree[i].father != -1){
-            tree[tree[i].father].colored = 1;
-        }else{
-            if(!tree[i].colored && tree[i].father != -1){
-                tree[tree[i].father].colored = 1;
-            }
-        }
+    std::vector<node> tree(n);
 
+    for (int i = 0; i < n - 1; i++) {
+        int from;
+        int to;
+        std::cin >> from >> to;
+        tree[from - 1].children.push_back(to - 1);
+        tree[to - 1].children.push_back(from - 1);
     }
-    int colored = 0;
-    for (int i = 0; i <n; i++){
-        if(tree[i].colored)
-            colored++;
-    }
-    std:: cout << colored << std::endl;
+    int colored = vertex_cover(tree);
+    std::cout << colored << std::endl;
 }
